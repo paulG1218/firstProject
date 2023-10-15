@@ -1,11 +1,16 @@
 
-const Mileage = ({isEditing, value}) => {
+const Mileage = ({isEditing, value, onValueChange}) => {
   return isEditing?(
-    <input type="number" placeholder="Mileage"/>
+    <input 
+        type="number" 
+        placeholder="Mileage"
+        value={value}
+        onChange={(e) => onValueChange(e.target.value)}
+    />
   ):(
-    <div>
-      {value}
-    </div>
+    <h3>
+      {value} Miles
+    </h3>
   )
 }
 

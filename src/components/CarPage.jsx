@@ -59,23 +59,28 @@ const CarPage = ({initialIsEditing, initialCars, id}) => {
                     <Year 
                         value={year}
                         isEditing={editMode} 
+                        onValueChange={setYear}
                     />
                     <Make 
                         value={make}
                         isEditing={editMode} 
+                        onValueChange={setMake}
                     />
                     <Model 
                         value={model}
                         isEditing={editMode} 
+                        onValueChange={setModel}
                     />
                 </h1>
                 <Mileage
                     value={mileage}
                     isEditing={editMode} 
+                    onValueChange={setMileage}
                 />
                 <EngineSize 
                     value={engineSize}
                     isEditing={editMode} 
+                    onValueChange={setEngineSize}
                 />
             </div>
          )

@@ -6,12 +6,13 @@ import { useState } from "react";
 const MainPage = ({cars}) => {
 
     const [selectedId, setSelectedId] = useState(0)
+    const [currentData, setCurrentData] = useState(cars)
 
-    const carSelect = () => {
-        setSelectedId(car.id)
+    const carSelect = (id) => {
+        setSelectedId(id)
     }
 
-    let filteredCar = cars.filter(car => car.id === selectedId)
+    let filteredCar = currentData.filter(car => car.id == selectedId)
 
     const tabs = filteredCar.map((car) => {
         const{img, year, make, model, mileage, engineSize, id, isEditing} = car
@@ -28,7 +29,7 @@ const MainPage = ({cars}) => {
     return (
         <>
          <SideBar 
-            cars={cars}
+            cars={currentData}
             carSelect={carSelect}
         />
          {tabs}
