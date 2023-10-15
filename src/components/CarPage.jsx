@@ -61,11 +61,13 @@ const CarPage = ({initialIsEditing, initialCars, id}) => {
                         isEditing={editMode} 
                         onValueChange={setYear}
                     />
+                    <br />
                     <Make 
                         value={make}
                         isEditing={editMode} 
                         onValueChange={setMake}
                     />
+                    <br />
                     <Model 
                         value={model}
                         isEditing={editMode} 

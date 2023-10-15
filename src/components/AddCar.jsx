@@ -1,8 +1,8 @@
 import React from 'react'
 
-const AddCar = () => {
+const AddCar = ({addClick}) => {
   return (
-    <button>
+    <button onClick={addClick}>
         + Add Car
     </button>
   )

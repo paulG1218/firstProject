@@ -2,6 +2,7 @@ import Header from "./Header";
 import CarPage from "./CarPage"
 import SideBar from "./SideBar";
 import { useState } from "react";
+import axios from "axios";
 
 const MainPage = ({cars}) => {
 
@@ -26,11 +27,17 @@ const MainPage = ({cars}) => {
         )
     })
 
+    const addTab = async () => {
+        const res = await axios.post('/addCar')
+        setCurrentData([...currentData, res.data])
+    }
+
     return (
         <>
          <SideBar 
             cars={currentData}
             carSelect={carSelect}
+            addTab={addTab}
         />
          {tabs}
         </>

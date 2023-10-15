@@ -1,8 +1,9 @@
 import React from 'react'
-import AddCar from './AddCar'
 import'./SideBar.css'
+import AddCar from './AddCar'
 
-const SideBar = ({cars, carSelect}) => {
+const SideBar = ({cars, carSelect, addTab}) => {
+    const addClick = addTab
 
     const carTabs = cars.map((car) => {
 
@@ -10,12 +11,11 @@ const SideBar = ({cars, carSelect}) => {
 
         const experiment = () => {
             carSelect(id)
-            console.log(id)
         }
 
         return (
             <div id='car' key={id}>
-                <button key={id} onClick={experiment}> 
+                <button id='carBtn'key={id} onClick={experiment}> 
                     {year} {make} {model}
                 </button>
             </div>
@@ -24,7 +24,10 @@ const SideBar = ({cars, carSelect}) => {
   return (
     <div id='carTabs'>
       {carTabs}
-      <AddCar/>
+      <AddCar
+        addClick={addClick}
+        id='addBtn'
+      />
     </div>
   )
 }

@@ -126,11 +126,11 @@ const handlerFunctions = {
 
         const newCar = {
             id: globalId,
-            year: 0,
-            make: '',
+            year: undefined,
+            make: 'New car',
             model: '',
-            mileage: 0,
-            engineSize: 0,
+            mileage: undefined,
+            engineSize: undefined,
         }
 
         cars.push(newCar)

@@ -1,11 +1,14 @@
 #carTabs {
     top: 30px;
     left: 0px;
-    font-size: 30px;
-    min-width: 600px;
+    font-size: 20px;
     position: absolute;
 }
-#car {
-    left: 0px;
-    
+#carBtn {
+    display: flex;
+    justify-content: left;
+    margin-top: 5px;
+}
+#addBtn {
+ margin-top: 20px;
 }
