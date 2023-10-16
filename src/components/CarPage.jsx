@@ -52,6 +52,9 @@ const CarPage = ({initialIsEditing, initialCars, id, deleteFunc}) => {
                     editClick={changeEditMode}
                     normalClick={changeNormalMode}
                     deleteFunc={deleteFunc}
+                    year={year}
+                    make={make}
+                    model={model}
                 />
                 
                 <CarImage 
