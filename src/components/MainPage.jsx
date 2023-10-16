@@ -23,6 +23,7 @@ const MainPage = ({cars}) => {
                 initialCars={{img, year, make, model, mileage, engineSize}}
                 initialIsEditing={isEditing}
                 id={id}
+                deleteFunc={() => deleteCar(id)}
             />
         )
     })
@@ -30,6 +31,16 @@ const MainPage = ({cars}) => {
     const addTab = async () => {
         const res = await axios.post('/addCar')
         setCurrentData([...currentData, res.data])
+    }
+
+    const deleteCar = async (id) => {
+        const res = await axios.delete(`/deleteCar/${id}`)
+
+        console.log(res.data)
+
+        const deletedCar = currentData.filter((car) => car.id != id)
+
+        setCurrentData(deletedCar)
     }
 
     return (

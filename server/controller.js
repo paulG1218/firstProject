@@ -1,4 +1,4 @@
-const cars = [
+let cars = [
     {
         year: 2012, 
         make: 'Volkswagen', 
@@ -125,12 +125,13 @@ const handlerFunctions = {
     addCar: (req, res) => {
 
         const newCar = {
+            img: "",
             id: globalId,
-            year: undefined,
+            year: '',
             make: 'New car',
             model: '',
-            mileage: undefined,
-            engineSize: undefined,
+            mileage: '',
+            engineSize: '',
         }
 
         cars.push(newCar)
@@ -138,6 +139,14 @@ const handlerFunctions = {
         globalId ++
 
         res.send(newCar)
+    },
+
+    deleteCar: (req, res) => {
+        const id = req.params.id
+
+        cars = cars.filter((car) => car.id != id)
+
+        res.send(cars)
     }
 
 }

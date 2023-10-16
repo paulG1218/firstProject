@@ -2,13 +2,14 @@ import Year from "./Year"
 import Make from "./Make"
 import Model from "./Model"
 import { useState } from 'react'
-import Editbutton from "./EditButton"
+import EditButton from "./EditButton"
 import EngineSize from "./EngineSize"
 import Mileage from "./Mileage"
 import axios from "axios"
 import './CarPage.css'
+import CarImage from "./CarImage"
 
-const CarPage = ({initialIsEditing, initialCars, id}) => {
+const CarPage = ({initialIsEditing, initialCars, id, deleteFunc}) => {
 
     const [editMode, setEditMode] = useState(initialIsEditing)
     const [year, setYear] = useState(initialCars.year)
@@ -46,14 +47,17 @@ const CarPage = ({initialIsEditing, initialCars, id}) => {
 
          return (
             <div key={id}>
-                <Editbutton 
+                <EditButton 
                     isEditing={editMode} 
                     editClick={changeEditMode}
                     normalClick={changeNormalMode}
+                    deleteFunc={deleteFunc}
                 />
                 
-                <img 
-                    src={img}
+                <CarImage 
+                    isEditing={editMode}
+                    value={img}
+                    onValueChange={setImg}
                 />
                 <h1>
                     <Year 

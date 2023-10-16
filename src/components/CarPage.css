@@ -3,3 +3,10 @@
     top: 15px;
     position: absolute;
 }
+#Delete {
+    top: 115px;
+    right: 15px;
+    position: absolute;
+    background-color: #940606;
+
+}
